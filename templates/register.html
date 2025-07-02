@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-lg border-0 rounded-4">
+      <div class="card-header bg-success text-white text-center rounded-top-4">
+        <h3 class="mb-0">Create an Account</h3>
+      </div>
+      <div class="card-body p-4">
+        <form method="POST">
+          {{ form.hidden_tag() }}
+
+          <div class="mb-3">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control form-control-lg", placeholder="Choose a username") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control form-control-lg", placeholder="Enter your email") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control form-control-lg", placeholder="Create a password") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.confirm_password.label(class="form-label") }}
+            {{ form.confirm_password(class="form-control form-control-lg", placeholder="Confirm your password") }}
+          </div>
+
+          <div class="d-grid">
+            {{ form.submit(class="btn btn-success btn-lg") }}
+          </div>
+        </form>
+      </div>
+      <div class="card-footer text-center py-3">
+        <small>Already have an account? <a href="{{ url_for('main.login') }}">Login here</a></small>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

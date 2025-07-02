@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-lg border-0 rounded-4">
+      <div class="card-header bg-success text-white text-center rounded-top-4">
+        <h3 class="mb-0">📄 Add Job Application</h3>
+      </div>
+      <div class="card-body p-4">
+        <form method="POST">
+          {{ form.hidden_tag() }}
+
+          <div class="mb-3">
+            {{ form.company.label(class="form-label fw-semibold") }}
+            {{ form.company(class="form-control form-control-lg", placeholder="e.g. Google, Microsoft") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.role.label(class="form-label fw-semibold") }}
+            {{ form.role(class="form-control form-control-lg", placeholder="e.g. Backend Developer") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.link.label(class="form-label fw-semibold") }}
+            {{ form.link(class="form-control form-control-lg", placeholder="Job posting or application link") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.status.label(class="form-label fw-semibold") }}
+            {{ form.status(class="form-select form-select-lg") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.deadline.label(class="form-label fw-semibold") }}
+            {{ form.deadline(class="form-control form-control-lg", type="date") }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.notes.label(class="form-label fw-semibold") }}
+            {{ form.notes(class="form-control form-control-lg", rows="4", placeholder="Optional notes about the job or application") }}
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-success btn-lg">
+              {{ form.submit.label.text }} ✅
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer text-center py-3">
+        <small>Need to see all jobs? <a href="{{ url_for('main.dashboard') }}">Go back to Dashboard</a></small>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

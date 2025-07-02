@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+  <div class="text-center">
+    <h1 class="display-4 fw-bold mb-3">🚀 Welcome to <span class="text-primary">Job Application Tracker</span></h1>
+    <p class="lead text-muted mb-4">
+      Organize your job search, track applications, and never miss a deadline again.
+    </p>
+    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+      <a href="{{ url_for('main.login') }}" class="btn btn-primary btn-lg px-4 shadow">🔐 Login</a>
+      <a href="{{ url_for('main.register') }}" class="btn btn-outline-primary btn-lg px-4 shadow">📝 Register</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
